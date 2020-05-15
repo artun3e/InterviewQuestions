@@ -1,6 +1,3 @@
-
-// Artun Sarioglu 
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -67,7 +64,7 @@ public class maxSum {
         if (isPrime(pyramid[0][0]))
             return 0;
          else
-            return maxSumDP(0, 0, ROWS, path);
+            return maxSumNaive(0, 0, ROWS, path);
 
     }
 
@@ -75,8 +72,8 @@ public class maxSum {
      -x,y denotes the current index
      */
 
-    // Dynamic Programming approach to the problem
-    private static int maxSumDP(int x, int y, int size, ArrayList<Location> path) {
+    // Naive Recursive approach to the problem
+    private static int maxSumNaive(int x, int y, int size, ArrayList<Location> path) {
 
 
         int maxSumLeft = 0;
@@ -97,9 +94,9 @@ public class maxSum {
 
         // traverse through all possible paths -> left || right
         if (!isPrime(pyramid[x + 1][y]))
-            maxSumRight = maxSumDP(x + 1, y, size, rightPath);
+            maxSumRight = maxSumNaive(x + 1, y, size, rightPath);
         if (!isPrime(pyramid[x + 1][y + 1]))
-            maxSumLeft = maxSumDP(x + 1, y + 1, size, leftPath);
+            maxSumLeft = maxSumNaive(x + 1, y + 1, size, leftPath);
         if (isPrime(pyramid[x + 1][y + 1]) && isPrime(pyramid[x + 1][y]))
             return Integer.MIN_VALUE;
 
