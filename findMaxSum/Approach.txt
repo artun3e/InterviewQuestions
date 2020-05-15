@@ -1,0 +1,7 @@
+One is expected to find the maximum sum with the given pyramid shaped input
+
+A Naive Recursive approach would easily solve the problem with below steps:
+  -Calculate the sum recursively for both left and the right indexes from the very beginning
+      - Make sure you are not dealing with a coordinate which contains a prime number
+
+  -Compare left & right summations, return the maximum...
