@@ -1,3 +1,5 @@
+// Artun Sarioglu
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -160,7 +162,7 @@ public class maxSum {
             if(i == 0)
                 System.out.print(path.get(i).number );
             else
-                System.out.print(path.get(i).number + " > ");
+                System.out.print(path.get(i).number + " -> ");
         }
 
 
